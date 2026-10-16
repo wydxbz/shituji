@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "拾图集 · 商品图片工作台",
+  "version": "1.0.0",
+  "description": "提取当前网页图片，按尺寸与比例筛选，集中预览，下载 PNG 并保留素材来源。",
+  "minimum_chrome_version": "116",
+  "permissions": ["activeTab", "scripting", "storage", "downloads"],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_popup": "popup.html", "default_title": "拾图集：提取当前页图片", "default_icon": {"16": "assets/icon16.png", "48": "assets/icon48.png", "128": "assets/icon128.png"}},
+  "icons": {"16": "assets/icon16.png", "48": "assets/icon48.png", "128": "assets/icon128.png"},
+  "content_scripts": [{
+    "matches": ["*://*.taobao.com/*", "*://*.tmall.com/*", "*://*.jd.com/*", "*://*.pinduoduo.com/*", "*://*.yangkeduo.com/*"],
+    "js": ["core.js", "collector.js", "content.js"],
+    "run_at": "document_idle"
+  }],
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'"}
+}
