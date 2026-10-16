@@ -1,0 +1,1 @@
+{"name":"shituji","version":"1.0.0","private":true,"description":"原创商品图片提取与整理浏览器扩展","scripts":{"test":"node --test tests/core.test.cjs","test:browser":"node tests/browser.test.cjs","assets":"node scripts/assets.cjs","preview":"node scripts/serve.cjs"},"devDependencies":{"playwright":"^1.62.1"}}

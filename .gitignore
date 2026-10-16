@@ -1,0 +1,6 @@
+node_modules/
+.test-profile/
+test-results/downloads/
+test-results/*.log
+*.tmp
+.DS_Store
